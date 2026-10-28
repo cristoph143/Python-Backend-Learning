@@ -16,6 +16,12 @@ class Payment:
     def is_positive(self) -> bool:
         return self.amount > 0
 
+    def add_amount(self, additional_amount: float) -> bool:
+        if additional_amount > 0:
+            self.amount += additional_amount
+            return True
+        return False
+
 
 payment = Payment("SSS", 1000)
 other_payment = Payment("SSS", 100)
@@ -29,3 +35,12 @@ print(payment.contribution_type)
 print(payment.amount)             
 print(payment.is_positive()) 
 print(other_payment.amount)  # 100    
+
+payment = Payment("SSS", 1000)
+
+print(payment.add_amount(250))   # True
+print(payment.amount)            # 1250
+
+print(payment.add_amount(0))     # False
+print(payment.add_amount(-100))  # False
+print(payment.amount)            # 1250
