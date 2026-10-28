@@ -10,12 +10,15 @@ My learning journal and exercises as I refresh computer science fundamentals and
 
 ## Current focus
 
-Python fundamentals: functions, loops, dictionaries, filtering, debugging, and basic OOP. Next diagnostic: implement a `Payment` class independently.
+Python fundamentals and basic OOP. Payment class and amount updates reviewed; next exercise: sum positive payments from a list of objects. Read `progress.md` for the exact resume checkpoint and `ROADMAP.md` for the full journey. `AGENTS.md` guides future tutoring sessions.
 
 ## Files
 
 - `exercises/01_payment_summary.py`: group positive payments by contribution type.
 - `exercises/02_count_positive_payments.py`: corrected early-return exercise.
+- `exercises/03_payment_class.py`: instance attributes, positive checks, and amount updates.
+- `AGENTS.md`: instructions for continuing tutoring across sessions.
+- `ROADMAP.md`: learning stages and milestone criteria.
 - `progress.md`: evidence of learning and next steps.
 - `notes/python_fundamentals.md`: reference notes to rewrite in my own words.
 
@@ -30,15 +33,15 @@ python exercises/02_count_positive_payments.py
 
 On Windows, use `py` if `python` is unavailable. No external packages are required.
 
-## Next exercise: Payment class
+## Next exercise: list of Payment objects
 
-When ready, create `exercises/03_payment_class.py` yourself:
+In `exercises/03_payment_class.py`, define `total_positive_payments(payments)` outside the class:
 
-1. Define a class named `Payment`.
-2. Store `contribution_type` and `amount` using `__init__`.
-3. Add `is_positive()` returning whether the amount is greater than zero.
-4. Try positive, zero, and negative amounts.
-5. Explain what `self` represents.
+1. Accept a list of Payment objects.
+2. Use each object's `is_positive()` method to decide whether to include it.
+3. Add positive `amount` values and return the total.
+4. Verify amounts 1000, 500, 0, -200 produce 1500.
+5. Verify an empty list produces 0.
 
 ## Longer-term direction
 
@@ -50,15 +53,18 @@ Project ideas: an OFW contribution management application and a daily-report aut
 
 ## Track with GitHub
 
-Create an empty GitHub repository named `python-backend-learning`. In this folder run:
+Repository: https://github.com/cristoph143/Python-Backend-Learning
+
+The repository is configured and exercise changes have been pushed to `main`. Typical commands for future checkpoints:
 
 ```bash
-git init
-git add .
-git commit -m "Add payment summary and early-return debugging exercises"
-git branch -M main
+git status
+git diff
+git add exercises/03_payment_class.py
+git commit -m "Describe the completed learning checkpoint"
+git push origin main
 ```
 
-Then use the remote URL and push instructions GitHub displays for your new repository. This starter package has not been uploaded to GitHub.
+Review changes before staging. Include updated learning notes when appropriate.
 
 Record assistance honestly. A completed exercise counts toward understanding when I can explain, modify, and test it independently.
